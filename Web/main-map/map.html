@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<title>Document</title>
+	</head>
+<link rel="stylesheet" href="./map.css">
+<body>
+	<div id="map" style="position: relative;">
+		<header style="position: absolute;">
+			<a href="#" class="aaa"><div class="menu">장소,주소검색</a>
+			<a href="#" onclick="toggleSideMenu(event)"><img src="./image/icons8-메뉴-바-50.png" alt="menu bar" class="menubar" style="position: absolute; top: 10px; left: 10px;"></a>
+			</div>
+		</header>
+		<footer style="position: absolute; bottom: 0px; z-index: 10;">
+			<a href="#" class="robot_call" onclick="toggleCallBox(event)"><img class="robot" src="./image/free-icon-robot-6134796.png" alt="" width="40px" height="40px" style="position: absolute; z-index: 20;">
+			<p>로봇호출</p></a>
+			<div class="footer_menu" style="position: absolute; bottom: 30px">
+				<a href="http://127.0.0.1:7860/"><img src="./image/free-icon-camera-685655.png" alt="camera" class="camera"></a>
+				<p>
+					로봇 호출<br>
+					카메라
+				</p>
+			</div>
+			<a href="#" class="propill_call"><img class="profile" src="./image/free-icon-profile-4519729.png" alt="" width="40px" height="40px"  style="position: absolute; z-index: 20;">
+			<p>프로필</p></a>
+		</footer>
+	</div>
+
+	<!-- 사이드 메뉴 -->
+	<div class="side-menu" style="position: fixed; top: 0; left: -250px; width: 250px; height: 100%; background: white; transition: 0.3s; box-shadow: 2px 0 5px rgba(0,0,0,0.2); z-index: 1000;">
+		<div style="padding: 20px;">
+			<h2>메뉴</h2>
+			<button onclick="toggleSideMenu(event)" style="position: absolute; top: 20px; right: 20px; padding: 5px 10px; border: none; background: #ff9999; color: white; border-radius: 5px; cursor: pointer;">나가기</button>
+			<ul style="list-style: none; padding: 0;">
+				<li style="margin: 40px 0;"><a href="#" style="text-decoration: none; color: black;">공지사항</a></li>
+				<li style="margin: 40px 0;"><a href="#" style="text-decoration: none; color: black;">이벤트</a></li>
+				<li style="margin: 40px 0;"><a href="#" style="text-decoration: none; color: black;">나의메뉴</a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- 로봇호출 박스 -->
+	<div class="call-box">
+		<div class="lobot-context">
+			<div class="robot-list">
+				<div class="robot-image"></div>
+				<div class="robot-number">
+					<h3>로봇 1번</h3>
+				</div>
+				<div class="box">
+					<button class="call-button">호출하기</button>
+					<ul class="btns">
+						<li>1번</li>
+						<li>2번</li>
+						<li>3번</li>
+					</ul>
+				</div>
+			</div>
+			<div class="robot-list">
+				<div class="robot-image"></div>
+				<div class="robot-number">
+					<h3>로봇 2번</h3>
+				</div>
+				<div class="box">
+					<button class="call-button">호출하기</button>
+					<ul class="btns">
+						<li>1번</li>
+						<li>2번</li>
+						<li>3번</li>
+					</ul>
+				</div>
+			</div>
+			<div class="robot-list">
+				<div class="robot-image"></div>
+				<div class="robot-number">
+					<h3>로봇 3번</h3>
+				</div>
+				<div class="box">
+					<button class="call-button">호출하기</button>
+					<ul class="btns">
+						<li>1번</li>
+						<li>2번</li>
+						<li>3번</li>
+					</ul>
+				</div>
+
+			</div>
+		</div>
+
+
+		<!-- 여기에 로봇 호출 관련 컨텐츠 추가 -->
+		<button class="close" onclick="closeCallBox()">나가기</button>
+	</div>
+
+	<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey={APIKEY}"></script>
+	<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(37.5647399, 126.9619161), // 지도의 중심좌표
+		        level: 2, // 지도의 확대 레벨
+		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		    }; 
+
+		// 지도를 생성한다 
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+
+	</script>
+	<script src="./map.js"></script>
+</body>
+</html>
